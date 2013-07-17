@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>calais json</title>
+        <script src="jquery-1.8.3.js"></script>
+        <script>
+            var jsonResponse;
+            var personDetails=[]
+            var months =  {'January_':1,'February_':3,'March_':1,'April_':2,'May_':1,'June_':2,'July_':1,'August_':1,'September_':2,'October_':1,'November_':2,'December_':1};
+            
+            var i;
+            //var jsonResponse="{\"doc\":{\"info\":{\"allowDistribution\":\"false\",\"allowSearch\":\"false\",\"calaisRequestID\":\"21dca2a9-9d46-2cde-13fd-1a0130574539\",\"externalID\":\" \",\"id\":\"http:\/\/id.opencalais.com\/o8Mkl0YYXNGIe2UEaczsOA\",\"docId\":\"http:\/\/d.opencalais.com\/dochash-1\/19a300dc-d075-31d3-bcc3-89155c380022\",\"document\":\"1085 - Emperor Shenzong of Song (b 1048) \\n1132 \ufffd St Hugues, Bishop of Grenoble (b 1053) \\n1204 \ufffd Eleanor of Aquitaine (b 1122) \\n1205 \ufffd King Amalric II of Jerusalem (b 1145) \\n1528 \ufffd Francisco de Pe\ufffdalosa, Spanish composer\",\"docTitle\":\"\",\"docDate\":\"2013-07-12 01:44:56.337\",\"externalMetadata\":\"Calais REST Sample<\\\/c:Caller>\",\"submitter\":\"Calais REST Sample\"},\"meta\":{\"contentType\":\"text\/raw\",\"emVer\":\"7.1.1103.5\",\"langIdVer\":\"DefaultLangId\",\"processingVer\":\"CalaisJob01\",\"submissionDate\":\"2013-07-12 01:44:56.197\",\"submitterCode\":\"3718d2a7-7b8e-380d-ed16-a676451d5126\",\"signature\":\"digestalg-1|f01KFKQ0iC8AoUVTvftI0GA\/orM=|HlrbAdpQ3\/OxVVGPPVH3r+\/J02+KKnORgwgDiIiehoCX7M8jkzuQ+w==\",\"language\":\"English\"}},\"http:\/\/d.opencalais.com\/dochash-1\/19a300dc-d075-31d3-bcc3-89155c380022\/cat\/1\":{\"_typeGroup\":\"topics\",\"category\":\"http:\/\/d.opencalais.com\/cat\/Calais\/Entertainment_Culture\",\"classifierName\":\"Calais\",\"categoryName\":\"Entertainment_Culture\",\"score\":1},\"http:\/\/d.opencalais.com\/dochash-1\/19a300dc-d075-31d3-bcc3-89155c380022\/cat\/2\":{\"_typeGroup\":\"topics\",\"category\":\"http:\/\/d.opencalais.com\/cat\/Calais\/HumanInterest\",\"classifierName\":\"Calais\",\"categoryName\":\"Human Interest\",\"score\":0.962},\"http:\/\/d.opencalais.com\/dochash-1\/19a300dc-d075-31d3-bcc3-89155c380022\/cat\/3\":{\"_typeGroup\":\"topics\",\"category\":\"http:\/\/d.opencalais.com\/cat\/Calais\/Religion_Belief\",\"classifierName\":\"Calais\",\"categoryName\":\"Religion_Belief\",\"score\":0.758},\"http:\/\/d.opencalais.com\/dochash-1\/19a300dc-d075-31d3-bcc3-89155c380022\/lid\/DefaultLangId\":{\"_typeGroup\":\"language\",\"language\":\"http:\/\/d.opencalais.com\/lid\/DefaultLangId\/English\"},\"http:\/\/d.opencalais.com\/pershash-1\/5b9afa3b-1c82-3f5b-8196-cadb3aea0287\":{\"_typeGroup\":\"entities\",\"_type\":\"Person\",\"name\":\"St Hugues\",\"persontype\":\"N\/A\",\"nationality\":\"N\/A\",\"commonname\":\"St Hugues\",\"_typeReference\":\"http:\/\/s.opencalais.com\/1\/type\/em\/e\/Person\",\"instances\":[{\"detection\":\"[- Emperor Shenzong of Song (b 1048) \\n1132 \ufffd ]St Hugues[, Bishop of Grenoble (b 1053) \\n1204 \ufffd Eleanor of]\",\"prefix\":\"- Emperor Shenzong of Song (b 1048) \\n1132 \ufffd \",\"exact\":\"St Hugues\",\"suffix\":\", Bishop of Grenoble (b 1053) \\n1204 \ufffd Eleanor of\",\"offset\":49,\"length\":9}],\"relevance\":0.603},\"http:\/\/d.opencalais.com\/genericHasher-1\/ce885bc7-bc35-331f-8295-d88fe4f9f85e\":{\"_typeGroup\":\"entities\",\"_type\":\"Position\",\"name\":\"Bishop\",\"_typeReference\":\"http:\/\/s.opencalais.com\/1\/type\/em\/e\/Position\",\"instances\":[{\"detection\":\"[Shenzong of Song (b 1048) \\n1132 \ufffd St Hugues, ]Bishop[ of Grenoble (b 1053) \\n1204 \ufffd Eleanor of]\",\"prefix\":\"Shenzong of Song (b 1048) \\n1132 \ufffd St Hugues, \",\"exact\":\"Bishop\",\"suffix\":\" of Grenoble (b 1053) \\n1204 \ufffd Eleanor of\",\"offset\":60,\"length\":6}],\"relevance\":0.603},\"http:\/\/d.opencalais.com\/pershash-1\/e6b5ff46-58df-356f-b233-ebd573c73bf1\":{\"_typeGroup\":\"entities\",\"_type\":\"Person\",\"name\":\"Shenzong\",\"persontype\":\"political\",\"nationality\":\"N\/A\",\"commonname\":\"Shenzong\",\"_typeReference\":\"http:\/\/s.opencalais.com\/1\/type\/em\/e\/Person\",\"instances\":[{\"detection\":\"[1085 - ]Emperor Shenzong[ of Song (b 1048) \\n1132 \ufffd St Hugues, Bishop of]\",\"prefix\":\"1085 - \",\"exact\":\"Emperor Shenzong\",\"suffix\":\" of Song (b 1048) \\n1132 \ufffd St Hugues, Bishop of\",\"offset\":7,\"length\":16}],\"relevance\":0.603},\"http:\/\/d.opencalais.com\/genericHasher-1\/d58ef869-b782-31c4-824e-39aac9c318a2\":{\"_typeGroup\":\"entities\",\"_type\":\"City\",\"name\":\"Jerusalem\",\"resolutions\":[{\"id\":\"http:\/\/d.opencalais.com\/er\/geo\/city\/ralg-geo1\/18b80693-df51-8a4f-7da8-3f8b0b661df4\",\"name\":\"Jerusalem,Israel\",\"shortname\":\"Jerusalem\",\"containedbycountry\":\"Israel\",\"latitude\":\"31.47\",\"longitude\":\"35.1\"}],\"_typeReference\":\"http:\/\/s.opencalais.com\/1\/type\/em\/e\/City\",\"instances\":[{\"detection\":\"[ of Aquitaine (b 1122) \\n1205 \ufffd King Amalric II of ]Jerusalem[ (b 1145) \\n1528 \ufffd Francisco de Pe\ufffdalosa, Spanish]\",\"prefix\":\" of Aquitaine (b 1122) \\n1205 \ufffd King Amalric II of \",\"exact\":\"Jerusalem\",\"suffix\":\" (b 1145) \\n1528 \ufffd Francisco de Pe\ufffdalosa, Spanish\",\"offset\":153,\"length\":9}],\"relevance\":0.603},\"http:\/\/d.opencalais.com\/genericHasher-1\/e98a7d1b-fe92-3409-8082-396602fdc070\":{\"_typeGroup\":\"entities\",\"_type\":\"Position\",\"name\":\"King\",\"_typeReference\":\"http:\/\/s.opencalais.com\/1\/type\/em\/e\/Position\",\"instances\":[{\"detection\":\"[\\n1204 \ufffd Eleanor of Aquitaine (b 1122) \\n1205 \ufffd ]King[ Amalric II of Jerusalem (b 1145) \\n1528 \ufffd]\",\"prefix\":\"\\n1204 \ufffd Eleanor of Aquitaine (b 1122) \\n1205 \ufffd \",\"exact\":\"King\",\"suffix\":\" Amalric II of Jerusalem (b 1145) \\n1528 \ufffd\",\"offset\":134,\"length\":4}],\"relevance\":0.603},\"http:\/\/d.opencalais.com\/pershash-1\/5e66cb38-2759-366b-844a-785aefcd8aa0\":{\"_typeGroup\":\"entities\",\"_type\":\"Person\",\"name\":\"Francisco de Pe\",\"persontype\":\"N\/A\",\"nationality\":\"N\/A\",\"commonname\":\"Francisco de Pe\",\"_typeReference\":\"http:\/\/s.opencalais.com\/1\/type\/em\/e\/Person\",\"instances\":[{\"detection\":\"[\ufffd King Amalric II of Jerusalem (b 1145) \\n1528 \ufffd ]Francisco de Pe[\ufffdalosa, Spanish composer]\",\"prefix\":\"\ufffd King Amalric II of Jerusalem (b 1145) \\n1528 \ufffd \",\"exact\":\"Francisco de Pe\",\"suffix\":\"\ufffdalosa, Spanish composer\",\"offset\":180,\"length\":15}],\"relevance\":0.603},\"http:\/\/d.opencalais.com\/pershash-1\/8c295696-0fc9-3af9-966d-d98ead6bf703\":{\"_typeGroup\":\"entities\",\"_type\":\"Person\",\"name\":\"Amalric II\",\"persontype\":\"political\",\"nationality\":\"Israeli\",\"commonname\":\"Amalric II\",\"_typeReference\":\"http:\/\/s.opencalais.com\/1\/type\/em\/e\/Person\",\"instances\":[{\"detection\":\"[\\n1204 \ufffd Eleanor of Aquitaine (b 1122) \\n1205 \ufffd ]King Amalric II[ of Jerusalem (b 1145) \\n1528 \ufffd Francisco de]\",\"prefix\":\"\\n1204 \ufffd Eleanor of Aquitaine (b 1122) \\n1205 \ufffd \",\"exact\":\"King Amalric II\",\"suffix\":\" of Jerusalem (b 1145) \\n1528 \ufffd Francisco de\",\"offset\":134,\"length\":15}],\"relevance\":0.603},\"http:\/\/d.opencalais.com\/genericHasher-1\/3405ace1-b6ba-3801-a25d-4079cd1335b1\":{\"_typeGroup\":\"entities\",\"_type\":\"Position\",\"name\":\"composer\",\"_typeReference\":\"http:\/\/s.opencalais.com\/1\/type\/em\/e\/Position\",\"instances\":[{\"detection\":\"[(b 1145) \\n1528 \ufffd Francisco de Pe\ufffdalosa, Spanish ]composer[]\",\"prefix\":\"(b 1145) \\n1528 \ufffd Francisco de Pe\ufffdalosa, Spanish \",\"exact\":\"composer\",\"offset\":211,\"length\":8}],\"relevance\":0.603},\"http:\/\/d.opencalais.com\/genericHasher-1\/ce0ef651-762e-31aa-b0c1-e5e069ae42c1\":{\"_typeGroup\":\"entities\",\"_type\":\"Position\",\"name\":\"Emperor\",\"_typeReference\":\"http:\/\/s.opencalais.com\/1\/type\/em\/e\/Position\",\"instances\":[{\"detection\":\"[1085 - ]Emperor[ Shenzong of Song (b 1048) \\n1132 \ufffd St Hugues,]\",\"prefix\":\"1085 - \",\"exact\":\"Emperor\",\"suffix\":\" Shenzong of Song (b 1048) \\n1132 \ufffd St Hugues,\",\"offset\":7,\"length\":7}],\"relevance\":0.603},\"http:\/\/d.opencalais.com\/genericHasher-1\/3de3658d-19ab-33e4-826c-1798c6a2f050\":{\"_typeGroup\":\"relations\",\"_type\":\"PersonCareer\",\"careertype\":\"professional\",\"status\":\"current\",\"_typeReference\":\"http:\/\/s.opencalais.com\/1\/type\/em\/r\/PersonCareer\",\"person\":\"http:\/\/d.opencalais.com\/pershash-1\/5b9afa3b-1c82-3f5b-8196-cadb3aea0287\",\"position\":\"http:\/\/d.opencalais.com\/genericHasher-1\/ce885bc7-bc35-331f-8295-d88fe4f9f85e\",\"instances\":[{\"detection\":\"[- Emperor Shenzong of Song (b 1048) \\n1132 \ufffd ]St Hugues, Bishop[ of Grenoble (b 1053) \\n1204 \ufffd Eleanor of]\",\"prefix\":\"- Emperor Shenzong of Song (b 1048) \\n1132 \ufffd \",\"exact\":\"St Hugues, Bishop\",\"suffix\":\" of Grenoble (b 1053) \\n1204 \ufffd Eleanor of\",\"offset\":49,\"length\":17}]},\"http:\/\/d.opencalais.com\/genericHasher-1\/889feb50-bb55-3401-a8af-804f1e521fe3\":{\"_typeGroup\":\"relations\",\"_type\":\"PersonLocation\",\"locationstring\":\"Jerusalem\",\"_typeReference\":\"http:\/\/s.opencalais.com\/1\/type\/em\/r\/PersonLocation\",\"person\":\"http:\/\/d.opencalais.com\/pershash-1\/8c295696-0fc9-3af9-966d-d98ead6bf703\",\"instances\":[{\"detection\":\"[\\n1204 \ufffd Eleanor of Aquitaine (b 1122) \\n1205 \ufffd ]King Amalric II of Jerusalem (b 1145)[ \\n1528 \ufffd Francisco de Pe\ufffdalosa, Spanish]\",\"prefix\":\"\\n1204 \ufffd Eleanor of Aquitaine (b 1122) \\n1205 \ufffd \",\"exact\":\"King Amalric II of Jerusalem (b 1145)\",\"suffix\":\" \\n1528 \ufffd Francisco de Pe\ufffdalosa, Spanish\",\"offset\":134,\"length\":37}]},\"http:\/\/d.opencalais.com\/genericHasher-1\/94fe3fe5-accd-3f7f-95b8-a876ec2f9829\":{\"_typeGroup\":\"relations\",\"_type\":\"PersonCareer\",\"careertype\":\"political\",\"status\":\"current\",\"_typeReference\":\"http:\/\/s.opencalais.com\/1\/type\/em\/r\/PersonCareer\",\"person\":\"http:\/\/d.opencalais.com\/pershash-1\/e6b5ff46-58df-356f-b233-ebd573c73bf1\",\"position\":\"http:\/\/d.opencalais.com\/genericHasher-1\/ce0ef651-762e-31aa-b0c1-e5e069ae42c1\",\"instances\":[{\"detection\":\"[1085 - ]Emperor Shenzong[ of Song (b 1048) \\n1132 \ufffd St Hugues, Bishop of]\",\"prefix\":\"1085 - \",\"exact\":\"Emperor Shenzong\",\"suffix\":\" of Song (b 1048) \\n1132 \ufffd St Hugues, Bishop of\",\"offset\":7,\"length\":16}]},\"http:\/\/d.opencalais.com\/genericHasher-1\/2f116730-64c5-3b68-99e6-9967963ad6ba\":{\"_typeGroup\":\"relations\",\"_type\":\"PersonCareer\",\"careertype\":\"political\",\"status\":\"current\",\"_typeReference\":\"http:\/\/s.opencalais.com\/1\/type\/em\/r\/PersonCareer\",\"person\":\"http:\/\/d.opencalais.com\/pershash-1\/8c295696-0fc9-3af9-966d-d98ead6bf703\",\"position\":\"http:\/\/d.opencalais.com\/genericHasher-1\/e98a7d1b-fe92-3409-8082-396602fdc070\",\"city\":\"http:\/\/d.opencalais.com\/genericHasher-1\/d58ef869-b782-31c4-824e-39aac9c318a2\",\"instances\":[{\"detection\":\"[\\n1204 \ufffd Eleanor of Aquitaine (b 1122) \\n1205 \ufffd ]King Amalric II of Jerusalem (b 1145)[ \\n1528 \ufffd Francisco de Pe\ufffdalosa, Spanish]\",\"prefix\":\"\\n1204 \ufffd Eleanor of Aquitaine (b 1122) \\n1205 \ufffd \",\"exact\":\"King Amalric II of Jerusalem (b 1145)\",\"suffix\":\" \\n1528 \ufffd Francisco de Pe\ufffdalosa, Spanish\",\"offset\":134,\"length\":37}]}}";
+            function resolveReferences(flatdb) {
+                for (var element in flatdb)
+                    for (var attribute in flatdb[element]) {
+                        var val = flatdb[element][attribute];
+                        if (typeof val == 'string')
+                            if (flatdb[val] != null)
+                                flatdb[element][attribute] = flatdb[val];
+                    }
+            }
+            function createHierarchy(flatdb) {
+                var hdb = new Object();
+                for (var element in flatdb) {
+                    var elementType = flatdb[element]._type;
+                    var elementGroup = flatdb[element]._typeGroup;
+                    if (elementGroup != null) {
+                        if (hdb[elementGroup] == null)
+                            hdb[elementGroup] = new Object();
+                        if (elementType != null) {
+                            if (hdb[elementGroup][elementType] == null)
+                                hdb[elementGroup][elementType] = new Object();
+                            hdb[elementGroup][elementType][element] = flatdb[element];
+                        } else
+                            hdb[elementGroup][element] = flatdb[element];
+                    } else
+                        hdb[element] = flatdb[element];
+                }
+                return hdb;
+            }
+
+            $(document).ready(function(){
+                
+                var callService = function(no_of_days,month){ 
+                    // alert(no_of_days);
+                    for ( i = 1; i <= no_of_days; i++) {
+                        // alert(i);
+                        var url = 'wiki_files/Deaths_content/' + month + '/' + month + '' + i;
+                        // alert (url);
+                        $.ajax({
+                            dataType: "json",
+                            async: false,
+                            url: 'example_api.php?url='+url,
+                            success:function(response){
+                                console.log("hi");
+                                jsonResponse = response;
+                                var jsonObject = null;
+                                var simpleJSON = null;
+                                try
+                                { 
+                                    //alert("onload function");
+                                    eval('jsonObject = ' + jsonResponse);        
+                                    resolveReferences(jsonObject);
+                                    simpleJSON = createHierarchy(jsonObject);
+                                    // start using simpleJSON
+                                    // alert(simpleJSON);
+                                    // console.log(JSON.stringify(simpleJSON));
+                                    //  alert(i);
+                                    for(key in simpleJSON.relations.PersonCareer){ 
+                                            
+                                        var name = simpleJSON.relations.PersonCareer[key].person.name;
+                                        var category = simpleJSON.relations.PersonCareer[key].person.persontype;
+                                        var nationality = simpleJSON.relations.PersonCareer[key].person.nationality;
+                                        var profession = simpleJSON.relations.PersonCareer[key].position.name;
+                                        var date = i;
+                                        var bioData={
+                                            name:name,
+                                            nationality:nationality,
+                                            category:category,
+                                            profession:profession,
+                                            month:month,
+                                            date:date
+                                        };
+                                        personDetails.push(bioData);
+                                
+                                    }
+                                    console.log('json received');
+                                    // console.log(personDetails);
+                                           
+                                }
+                                catch    (e)
+                                {
+                                    // handle errors
+                                }   
+                            }
+                        });
+                                
+                        $.ajax({
+                            type: 'POST',
+                            dataType: "json",
+                            async: false,
+                            data:{'data':JSON.stringify(personDetails)},
+                            url: 'db_insert.php?',
+                            success:function(){
+                                //console.log(response+" "+month+" "+i);
+                            }
+                        });
+                        console.log("success"+" "+month+" "+i);
+                         
+                        personDetails=[];
+                        //console.log(personDetails);
+                    }
+                }
+                
+                $("#callDic").click(function(){
+                    //  alert ('clicked');
+                    
+                    for (var month in months){
+                        value= months[month];
+                        if (value == 1) {
+                            callService(31,month);
+                        }
+                        if (value == 2) {
+                            callService(30,month);
+                        }
+                        if (value == 3) {
+                            callService(28,month);
+                        }
+                    }
+                });
+            });
+           
+        </script>
+    </head>
+    <body>
+        <header>...</header>
+        <nav>...</nav>
+        <article>
+            <section>
+                ...
+            </section>
+        </article>
+        <aside>...</aside>
+        <input type="button" value="callServer" name="callServer" id="callServer" />
+        <input type="button" value="callDic" name="callDic" id="callDic" />
+        <footer>itsashwinb@gmail.com</footer>
+    </body>
